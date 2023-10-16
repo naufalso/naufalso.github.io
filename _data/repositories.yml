@@ -1,12 +1,9 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - naufalso
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - naufalso/keras_nerf
+  - islab-ai/dta-cvpr2022
+  - islab-ai/active-iccv2023
+  - naufalso/face_tracker_logger
+  - naufalso/mapreduce-hotspot

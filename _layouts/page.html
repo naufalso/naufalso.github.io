@@ -5,7 +5,9 @@ layout: default
 <div class="post">
 
   <header class="post-header">
+    {%- if page.title_hide == null or page.title_hide == false -%}
     <h1 class="post-title">{{ page.title }}</h1>
+    {%- endif -%}
     <p class="post-description">{{ page.description }}</p>
   </header>
 
@@ -22,6 +24,6 @@ layout: default
   {%- endif %}
 
   {%- if site.giscus and page.giscus_comments -%}
-    {% include giscus.html %}
+  {% include giscus.html %}
   {%- endif -%}
 </div>
