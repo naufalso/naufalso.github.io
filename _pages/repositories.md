@@ -2,7 +2,7 @@
 layout: page
 permalink: /repositories/
 title: repositories
-description: My personal GitHub repository.
+description: My personal public GitHub repository. Unfortunately, due to the policy, most of my projects are private and cannot be shared and listed here.
 nav: true
 nav_order: 3
 ---
