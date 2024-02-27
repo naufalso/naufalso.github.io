@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Ph.D. Candidate & AI Researcher at Information Security and AIoT Lab, Pusan National University
+subtitle: Ph.D. & AI Researcher at Information Security and AIoT Lab, Pusan National University
 
 profile:
   align: right
