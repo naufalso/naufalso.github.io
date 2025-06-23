@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Relocating to UAE and starting new #postdoctoral fellow at Robust Intelligence System Lab (RISys-Lab) at Khalifa University under Prof. Muzammal Naseer.
+Relocating to the UAE 🇦🇪 and starting a new #PostdoctoralFellowship at the Robust Intelligent Systems Lab (RISys-Lab), Khalifa University, under Prof. Muzammal Naseer.
