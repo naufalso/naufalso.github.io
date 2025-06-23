@@ -7,3 +7,5 @@ github_repos:
   - islab-ai/active-iccv2023
   - naufalso/face_tracker_logger
   - naufalso/mapreduce-hotspot
+  - naufalso/cityscape-adverse
+  - naufalso/adversarial-manhole
