@@ -13,6 +13,11 @@ related_publications: Suryanto_2023_ICCV, Suryanto_2022_CVPR, Suryanto_2020_dist
 
 <br>
 
+### PhD Thesis:
+[https://www.dbpia.co.kr/journal/detail?nodeId=T17011849](https://www.dbpia.co.kr/journal/detail?nodeId=T17011849)
+
+<br>
+
 ### Abstract:
 The rise of deep learning in safety-critical domains like autonomous vehicles and surveillance systems has underscored the urgency of protecting these technologies against adversarial attacks. Physical adversarial attacks, which involve tangible modifications to an object's appearance, present a practical and significant threat since they can induce misinterpretation of computer vision models. This dissertation demonstrates this critical issue by developing methodologies for generating physical adversarial camouflage and providing comprehensive preliminaries to deepen the understanding of the field.
 
