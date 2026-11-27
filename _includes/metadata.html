@@ -35,7 +35,7 @@
         {{ title }}
     {%- endif -%}
     </title>
-    <meta name="author" content="{{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}" />
+    <meta name="author" content="{{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}" />
     <meta name="description" content="{%- if page.description -%}{{ page.description }}{%- else -%}{{ site.description }}{%- endif -%}" />
 {%- if page.keywords or site.keywords %}
     <meta name="keywords" content="{%- if page.keywords -%}{{ page.keywords }}{%- else -%}{{ site.keywords }}{%- endif -%}" />
@@ -52,7 +52,7 @@
     <!-- OpenGraph -->
     <meta property="og:site_name" content="{{ title }}" />
     <meta property="og:type" content="{%- if is_blog_post -%}article{%- else -%}website{%- endif -%}" />
-    <meta property="og:title" content="{%- if page.title -%}{{ title }} | {{ page.title }}{%- else -%}{{ title }}{%- endif -%}" />
+    <meta property="og:title" content="{%- if page.title and page.url != '/' -%}{{ page.title }} | {{ title }}{%- else -%}{{ title }}{%- endif -%}" />
     <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}" />
     <meta property="og:description" content="{%- if page.description -%}{{ page.description }}{%- else -%}{{ site.description }}{%- endif -%}" />
     {% if page.og_image or site.og_image -%}
@@ -62,7 +62,8 @@
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="{%- if page.title -%}{{ page.title }}{%- else -%}{{ title }}{%- endif -%}" />
+    <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}" />
+    <meta name="twitter:title" content="{%- if page.title and page.url != '/' -%}{{ page.title }} | {{ title }}{%- else -%}{{ title }}{%- endif -%}" />
     <meta name="twitter:description" content="{%- if page.description -%}{{ page.description }}{%- else -%}{{ site.description }}{%- endif -%}" />
     {% if page.og_image or site.og_image -%}
     <meta name="twitter:image" content="{%- if page.og_image -%}{{ page.og_image }}{%- else -%}{{ site.og_image }}{%- endif -%}" />
@@ -214,26 +215,51 @@
         {%- capture link -%}https://www.zotero.org/{{ site.zotero_username }}{%- endcapture -%}
         {%- assign sameaslinks = sameaslinks | push: link -%}
     {%- endif -%}
-    {%- if sameaslinks != blank -%}
-        {%- assign sameaslinks = sameaslinks | split: "" -%}
-    {%- endif -%}
 
+    {%- capture fullname -%}{{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}{%- endcapture -%}
+    {%- capture ld_desc -%}{%- if page.description -%}{{ page.description | strip_html }}{%- else -%}{{ site.description }}{%- endif -%}{%- endcapture -%}
+    {%- assign ld_url = page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' -%}
     <script type="application/ld+json">
+    {%- if page.url == "/" %}
     {
-        "author":
-        {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "url": {{ ld_url | jsonify }},
+        "description": {{ ld_desc | strip | jsonify }},
+        "mainEntity": {
             "@type": "Person",
-            "name": "{{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}"
-        },
-        "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
-        "@type": "{%- if is_blog_post -%}BlogPosting{%- else -%}WebSite{%- endif -%}",
-        "description": "{%- if page.description -%}{{ page.description }}{%- else if site.description -%}{{ site.description }}{%- endif -%}",
-        "headline": "{%- if page.title -%}{{ page.title }}{%- else -%}{{ site.title }}{%- endif -%}",
-        {% if sameaslinks != blank -%}
-        "sameAs": {{ sameaslinks }},
-        {%- endif %}
-        "name": "{{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}",
-        "@context": "https://schema.org"
+            "name": {{ fullname | jsonify }},
+            "url": {{ site.url | jsonify }},
+            {%- if site.og_image %}
+            "image": {{ site.og_image | jsonify }},
+            {%- endif %}
+            {%- if site.person.job_title %}
+            "jobTitle": {{ site.person.job_title | jsonify }},
+            {%- endif %}
+            {%- if site.person.works_for %}
+            "worksFor": { "@type": "Organization", "name": {{ site.person.works_for | jsonify }} },
+            {%- endif %}
+            {%- if site.person.alumni_of %}
+            "alumniOf": [{% for org in site.person.alumni_of %}{ "@type": "CollegeOrUniversity", "name": {{ org | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+            {%- endif %}
+            {%- if site.person.knows_about %}
+            "knowsAbout": {{ site.person.knows_about | jsonify }},
+            {%- endif %}
+            {%- if sameaslinks != blank %}
+            "sameAs": {{ sameaslinks | jsonify }},
+            {%- endif %}
+            "email": {{ site.email | prepend: "mailto:" | jsonify }}
+        }
     }
+    {%- else %}
+    {
+        "@context": "https://schema.org",
+        "@type": "{%- if is_blog_post -%}BlogPosting{%- else -%}WebPage{%- endif -%}",
+        "url": {{ ld_url | jsonify }},
+        "headline": {{ page.title | default: fullname | jsonify }},
+        "description": {{ ld_desc | strip | jsonify }},
+        "author": { "@type": "Person", "name": {{ fullname | jsonify }}, "url": {{ site.url | jsonify }} }
+    }
+    {%- endif %}
     </script>
 {%- endif %}

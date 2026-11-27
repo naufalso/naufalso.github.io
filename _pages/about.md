@@ -29,3 +29,5 @@ I received my PhD in Computer Engineering from Pusan National University, South 
 Earlier, I worked as a Java developer on manufacturing software at camLine, led the EEPIS humanoid robot soccer team at RoboCup, and co-founded MUFKO, a mobile app for Muslims in Korea with over 50K downloads.
 
 I serve as an Area Chair for ECCV 2026 and was named an Outstanding Reviewer at CVPR 2026 (top 5% of about 17K reviewers) and ICCV 2023.
+
+For an overview of my work, see the [projects](/projects/) page or my [CV](/cv/) ([PDF](/assets/pdf/Naufal_Suryanto_CV.pdf)).

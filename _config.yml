@@ -62,6 +62,21 @@ serve_og_meta: true # Include Open Graph meta tags in the HTML head
 serve_schema_org: true # Include Schema.org in the HTML head
 og_image: https://naufalso.github.io/assets/img/prof_pic.jpg # The site-wide (default for all links) Open Graph preview image
 
+# Structured data (schema.org Person) used on the home page for search engines.
+person:
+  job_title: Postdoctoral Fellow
+  works_for: Khalifa University
+  alumni_of:
+    - Pusan National University
+    - Electronic Engineering Polytechnic Institute of Surabaya
+  knows_about:
+    - Trustworthy AI
+    - AI Security
+    - Large Language Models
+    - Multimodal Large Language Models
+    - Computer Vision
+    - Adversarial Machine Learning
+
 # -----------------------------------------------------------------------------
 # Social integration
 # -----------------------------------------------------------------------------
@@ -73,9 +88,9 @@ mastodon_username: # your mastodon instance+username in the format instance.tld/
 linkedin_username: naufal-suryanto # your LinkedIn user name
 telegram_username: NaufalSo # your Telegram user name
 scholar_userid: vXEPNi4AAAAJ # your Google Scholar ID
-semanticscholar_id: # your Semantic Scholar ID
+semanticscholar_id: 2008159459 # your Semantic Scholar ID
 whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
-orcid_id: # your ORCID ID
+orcid_id: 0000-0002-0396-5938 # your ORCID ID
 medium_username: # your Medium username
 quora_username: # your Quora username
 publons_id: # your ID on Publons
@@ -88,7 +103,7 @@ work_url: # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
 wikipedia_id: # your wikipedia id (Case sensitive)
-dblp_url: # your DBLP profile url
+dblp_url: https://dblp.org/orcid/0000-0002-0396-5938 # your DBLP profile url (resolved via ORCID)
 stackoverflow_id: 11658233 # your stackoverflow id
 kaggle_id: # your kaggle id
 lastfm_id: # your lastfm id
@@ -165,7 +180,7 @@ collections:
   news:
     defaults:
       layout: post
-    output: true
+    output: false # news items are shown inline on the home and /news/ pages
     permalink: /news/:path/
   projects:
     output: true

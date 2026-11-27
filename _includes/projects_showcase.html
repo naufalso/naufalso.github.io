@@ -1,0 +1,80 @@
+{%- comment -%}
+  Projects showcase. Content lives in _data/projects.yml; styles in _sass/_projects.scss;
+  behaviour (filter, reveal-on-scroll) in assets/js/projects.js. Everything is readable
+  without JavaScript and all motion is disabled under prefers-reduced-motion.
+{%- endcomment -%}
+{%- assign data = site.data.projects -%}
+<div class="pj" data-pj-root>
+  <div class="pj-filters" role="toolbar" aria-label="Filter projects by theme">
+    <button type="button" class="pj-chip is-active" data-filter="all" aria-pressed="true">All</button>
+    {%- for c in data.categories %}
+    <button type="button" class="pj-chip" data-filter="{{ c.id }}" aria-pressed="false">{{ c.label }}</button>
+    {%- endfor %}
+  </div>
+
+  {%- for c in data.categories %}
+  {%- assign items = data.items | where: "category", c.id -%}
+  {%- if items.size > 0 %}
+  <section class="pj-group" data-cat="{{ c.id }}" aria-labelledby="pj-{{ c.id }}">
+    <h2 class="pj-group-title" id="pj-{{ c.id }}">{{ c.label }}</h2>
+    <div class="pj-grid">
+      {%- for p in items -%}
+      {%- assign mtype = p.media.type | default: "none" -%}
+      {%- assign primary = p.links | first -%}
+      <article class="pj-card pj-reveal{% if mtype == 'none' %} pj-card--compact{% endif %}">
+        {%- if mtype != "none" %}
+        <a class="pj-media pj-media--{{ mtype }}{% if p.media.fit == 'contain' %} pj-media--contain{% endif %}" href="{{ primary.url }}" aria-label="{{ p.title }}: {{ primary.name }}" tabindex="-1">
+          {%- if mtype == "image" or mtype == "pan" %}
+          <img src="{{ p.media.src | prepend: '/assets/img/projects/' | relative_url }}" alt="{{ p.media.alt }}" loading="lazy" decoding="async">
+          {%- elsif mtype == "slideshow" %}
+          <span class="pj-slides">
+            {%- for im in p.media.images %}
+            <img src="{{ im.src | prepend: '/assets/img/projects/' | relative_url }}" alt="{{ im.alt }}" loading="lazy" decoding="async" style="animation-duration: {{ forloop.length | times: 3.5 }}s; animation-delay: {{ forloop.index0 | times: 3.5 }}s">
+            {%- endfor %}
+          </span>
+          {%- elsif mtype == "terminal" %}
+          <span class="pj-term" aria-hidden="true">
+            <span class="pj-term-bar"><i></i><i></i><i></i></span>
+            <span class="pj-term-body">
+            {%- for l in p.media.lines %}
+              {%- if l.prompt %}
+              {%- assign nch = l.prompt | size %}
+              <span class="pj-term-line pj-term-prompt" style="animation-duration: {{ nch | times: 28 }}ms; animation-delay: {{ forloop.index0 | times: 750 | plus: 350 }}ms; animation-timing-function: steps({{ nch }})">{{ l.prompt }}</span>
+              {%- else %}
+              {%- assign nch = l.value | size | plus: 13 %}
+              <span class="pj-term-line" style="animation-duration: {{ nch | times: 28 }}ms; animation-delay: {{ forloop.index0 | times: 750 | plus: 350 }}ms; animation-timing-function: steps({{ nch }})"><b>{{ l.key }}</b>{{ l.value }}</span>
+              {%- endif %}
+            {%- endfor %}
+              <span class="pj-term-cursor"></span>
+            </span>
+          </span>
+          {%- endif %}
+        </a>
+        {%- endif %}
+        <div class="pj-body">
+          <div class="pj-meta">
+            <span class="pj-venue">{{ p.venue }}</span>
+            {%- if p.role %}<span class="pj-role">{{ p.role }}</span>{% endif %}
+          </div>
+          <h3 class="pj-title">
+            {%- if primary %}<a href="{{ primary.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif -%}
+          </h3>
+          {%- if p.subtitle %}<p class="pj-subtitle">{{ p.subtitle }}</p>{% endif %}
+          <p class="pj-desc">{{ p.description | strip }}</p>
+          {%- if p.links.size > 0 %}
+          <ul class="pj-links">
+            {%- for l in p.links %}
+            <li><a href="{{ l.url }}">{{ l.name }}</a></li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+  {%- endfor %}
+</div>
+
+<script defer src="{{ '/assets/js/projects.js' | relative_url | bust_file_cache }}"></script>
