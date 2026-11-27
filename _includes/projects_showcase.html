@@ -33,6 +33,7 @@
         {%- endfor %}
         {%- else %}
         <img src="{{ p.media.src | prepend: '/assets/img/projects/' | relative_url }}" alt="{{ p.media.alt }}" loading="lazy" decoding="async">
+        {%- if mtype == "video" %}<span class="pj-play"></span>{% endif %}
         {%- endif %}
       </a>
       {%- endif %}
