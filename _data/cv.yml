@@ -65,7 +65,7 @@
         - Few-shot drug package classification, prescription OCR, and drug information extraction.
     - title: Co-founder and Mobile Developer
       institution: MUFKO (Muslim Friendly Korea)
-      year: 2020 - now
+      year: From 2020
       location: Remote, South Korea
       description:
         - Built a cross-platform app for halal food and prayer spaces in Korea, with 100,000+ Google Play downloads.
@@ -85,14 +85,20 @@
 - title: Academic Service
   type: time_table
   contents:
-    - title: Area Chair, CVPR 2027
-      year: 2027
-    - title: Area Chair, ECCV 2026
-      year: 2026
-    - title: Outstanding Reviewer, CVPR 2026 (top 5% of about 17K reviewers)
-      year: 2026
-    - title: Outstanding Reviewer, ICCV 2023
-      year: 2023
+    - title: Area Chair
+      year: 2026 - 2027
+      description:
+        - CVPR 2027 and ECCV 2026
+    - title: Reviewer and Program Committee Member
+      year: 2022 - now
+      description:
+        - "Conferences: CVPR 2023 to 2026, ICCV 2023 and 2025, ICLR 2026, AAAI 2026 (PC, main and AI Alignment tracks), ACL Rolling Review 2026"
+        - "Journals: IJCV, Special Issue on Robust Vision (2022)"
+    - title: Outstanding Reviewer
+      year: 2023, 2026
+      description:
+        - CVPR 2026 (top 5% of about 17K reviewers)
+        - ICCV 2023 (top 1.8% of reviewers)
 
 - title: Honors and Awards
   type: time_table

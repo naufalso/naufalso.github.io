@@ -183,6 +183,36 @@ html[data-theme='dark'] {
   object-position: 100% 50%;
 }
 
+/* Video still: a play icon marks that the figure opens a video. */
+.pj-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3rem;
+  height: 3rem;
+  margin: -1.5rem 0 0 -1.5rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .6);
+  transition: background-color .2s ease, transform .2s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-width: .55rem 0 .55rem .9rem;
+    border-color: transparent transparent transparent #fff;
+  }
+}
+
+.pj-item:hover .pj-play,
+.pj-item:focus-within .pj-play {
+  background: rgba(0, 0, 0, .8);
+  transform: scale(1.06);
+}
+
 /* Dataset examples: the first image is the resting frame; the others cross-fade in. */
 .pj-thumb--slideshow img {
   position: absolute;

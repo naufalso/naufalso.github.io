@@ -2,7 +2,7 @@
 #
 # categories: ids used by the filter chips on the page.
 # items:
-#   media.type: image | pan (wide figure that pans on hover) | slideshow | none
+#   media.type: image | pan (wide figure that pans on hover) | slideshow | video (still + play icon; links to the first link) | none
 #   media.fit:  cover (default) | contain (for diagrams; keeps the whole figure visible)
 #   role:       your role on the paper (shown as a small tag)
 
@@ -218,13 +218,19 @@ items:
   - title: MUFKO
     subtitle: Muslim Friendly Korea
     category: engineering
-    venue: 2020 to now
+    venue: From 2020
     role: Co-founder
     description: >
       A cross-platform mobile app that helps people find halal food and prayer spaces in Korea. I co-founded it and built the app, which has over 100,000 Google Play downloads.
     media:
-      type: none
-    links: []
+      type: pan
+      src: mufko.jpg
+      alt: MUFKO app screens from the App Store listing, including product checks, halal restaurants, prayer times and mosques
+    links:
+      - name: Google Play
+        url: https://play.google.com/store/apps/details?id=com.mufko.mobile
+      - name: App Store
+        url: https://apps.apple.com/app/mufko/id1500736574
 
   - title: EROS
     subtitle: EEPIS Humanoid Robot Soccer
@@ -235,5 +241,11 @@ items:
       Led and programmed a kid-size humanoid soccer team that reached the RoboCup quarter-finals (2016) and placed 2nd runner-up in 2015.
       Introduced ROS to the research center.
     media:
-      type: none
-    links: []
+      type: video
+      src: eros.jpg
+      alt: EROS humanoid robot approaching the ball in the 2016 qualification video
+    links:
+      - name: 2016 qualification video
+        url: https://www.youtube.com/watch?v=fqKxnZ-0cX4
+      - name: 2015 qualification video
+        url: https://www.youtube.com/watch?v=XTLJtFhVIRQ
