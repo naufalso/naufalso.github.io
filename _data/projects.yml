@@ -223,7 +223,9 @@ items:
     description: >
       A cross-platform mobile app that helps people find halal food and prayer spaces in Korea. I co-founded it and built the app, which has over 100,000 Google Play downloads.
     media:
-      type: none
+      type: pan
+      src: mufko.jpg
+      alt: MUFKO app screens from the App Store listing, including product checks, halal restaurants, prayer times and mosques
     links:
       - name: Google Play
         url: https://play.google.com/store/apps/details?id=com.mufko.mobile
