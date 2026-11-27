@@ -89,10 +89,28 @@
       year: 2027
     - title: Area Chair, ECCV 2026
       year: 2026
-    - title: Outstanding Reviewer, CVPR 2026 (top 5% of about 17K reviewers)
+    - title: Program Committee Member, AAAI 2026
       year: 2026
-    - title: Outstanding Reviewer, ICCV 2023
-      year: 2023
+      description:
+        - Main conference and AI Alignment Track
+    - title: Reviewer, ICLR 2026
+      year: 2026
+    - title: Reviewer, ACL Rolling Review
+      year: 2026
+      description:
+        - January 2026 cycle
+    - title: Reviewer, CVPR 2023, 2024, 2025 and 2026
+      year: 2023 - 2026
+      description:
+        - Outstanding Reviewer at CVPR 2026 (top 5% of about 17K reviewers)
+    - title: Reviewer, ICCV 2023 and 2025
+      year: 2023, 2025
+      description:
+        - Outstanding Reviewer at ICCV 2023 (top 1.8% of reviewers)
+    - title: Reviewer, International Journal of Computer Vision (IJCV)
+      year: 2022
+      description:
+        - Special Issue on Robust Vision
 
 - title: Honors and Awards
   type: time_table
