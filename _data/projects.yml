@@ -241,9 +241,9 @@ items:
     media:
       type: video
       src: eros.jpg
-      alt: EROS humanoid robot approaching the ball during the RoboCup 2016 qualification run
+      alt: EROS humanoid robot approaching the ball in the 2016 qualification video
     links:
-      - name: RoboCup 2016 video
+      - name: 2016 qualification video
         url: https://www.youtube.com/watch?v=fqKxnZ-0cX4
-      - name: RoboCup 2015 video
+      - name: 2015 qualification video
         url: https://www.youtube.com/watch?v=XTLJtFhVIRQ
