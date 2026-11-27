@@ -5,5 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper “<a href="https://arxiv.org/abs/2606.26794">ReasonCLIP-58M: Visually Grounded Commonsense Reasoning Supervision for CLIP</a>” has been accepted to ECCV 2026! 🎉
-I am also honored to served as the Area Chair.
+<a href="https://arxiv.org/abs/2606.26794">ReasonCLIP-58M</a> was accepted to ECCV 2026, where I also serve as an Area Chair.

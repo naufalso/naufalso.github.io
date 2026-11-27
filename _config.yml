@@ -8,14 +8,13 @@ middle_name:
 last_name: Suryanto
 email: naufalsuryanto@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Personal page of Naufal Suryanto, a researcher and software developer in the field of AI, Deep Learning, Computer Vision, and AI Security.
+  Naufal Suryanto is a Postdoctoral Fellow at Khalifa University (RISys-Lab) working on trustworthy AI: LLMs for cybersecurity, multimodal and video LLMs, and adversarial robustness of vision models.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: AI, Deep Learning, Computer Vision, AI Security, Adversarial Machine Learning, Researcher, Software Developer  # add your own keywords or leave empty
+keywords: Naufal Suryanto, AI Security, Trustworthy AI, Large Language Models, Multimodal LLM, Cybersecurity LLM, Computer Vision, Adversarial Machine Learning, Khalifa University, RISys-Lab
 
-lang: en, id # the language of your site (for example: en, fr, cn, ru, etc.)
+lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: NS_Small.png  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://naufalso.github.io # the base hostname & protocol for your site
@@ -41,14 +40,14 @@ repo_trophies:
 # will use title and url fields
 # Take a look to https://github.com/jekyll/jekyll-feed for more customization
 
-rss_icon: true
+rss_icon: false
 
 # -----------------------------------------------------------------------------
 # Layout
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 
 # Dimensions
 max_width: 800px
@@ -59,9 +58,24 @@ max_width: 800px
 # Open Graph & Schema.org
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
-serve_schema_org: false # Include Schema.org in the HTML head
-og_image: # The site-wide (default for all links) Open Graph preview image
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
+serve_schema_org: true # Include Schema.org in the HTML head
+og_image: https://naufalso.github.io/assets/img/prof_pic.jpg # The site-wide (default for all links) Open Graph preview image
+
+# Structured data (schema.org Person) used on the home page for search engines.
+person:
+  job_title: Postdoctoral Fellow
+  works_for: Khalifa University
+  alumni_of:
+    - Pusan National University
+    - Electronic Engineering Polytechnic Institute of Surabaya
+  knows_about:
+    - Trustworthy AI
+    - AI Security
+    - Large Language Models
+    - Multimodal Large Language Models
+    - Computer Vision
+    - Adversarial Machine Learning
 
 # -----------------------------------------------------------------------------
 # Social integration
@@ -72,31 +86,31 @@ gitlab_username: # your GitLab user name
 twitter_username: naufal_suryanto  # your Twitter handle
 mastodon_username: # your mastodon instance+username in the format instance.tld/@username
 linkedin_username: naufal-suryanto # your LinkedIn user name
-telegram_username: NaufalSo # your Telegram user name
+telegram_username: # your Telegram user name (was NaufalSo)
 scholar_userid: vXEPNi4AAAAJ # your Google Scholar ID
-semanticscholar_id: # your Semantic Scholar ID
+semanticscholar_id: 2008159459 # your Semantic Scholar ID
 whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
-orcid_id: # your ORCID ID
+orcid_id: 0000-0002-0396-5938 # your ORCID ID
 medium_username: # your Medium username
 quora_username: # your Quora username
 publons_id: # your ID on Publons
 lattes_id: # your ID on Lattes (Brazilian Lattes CV)
 osf_id: # your OSF ID
-research_gate_profile: Naufal-Suryanto # your profile on ResearchGate
+research_gate_profile: # your profile on ResearchGate (was Naufal-Suryanto)
 scopus_id: # your profile on Scopus
 blogger_url: # your blogger URL
 work_url: # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
 wikipedia_id: # your wikipedia id (Case sensitive)
-dblp_url: # your DBLP profile url
-stackoverflow_id: 11658233 # your stackoverflow id
+dblp_url: https://dblp.org/orcid/0000-0002-0396-5938 # your DBLP profile url (resolved via ORCID)
+stackoverflow_id: # your stackoverflow id (was 11658233)
 kaggle_id: # your kaggle id
 lastfm_id: # your lastfm id
 spotify_id: # your spotify id
 pinterest_id: # your pinterest id
 unsplash_id: # your unsplash id
-instagram_id: naufalsyo # your instagram id
+instagram_id: # your instagram id (was naufalsyo)
 facebook_id: # your facebook id
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 discord_id: # your discord id (18-digit unique numerical identifier)
@@ -104,7 +118,7 @@ zotero_username: # your zotero username
 wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 
 # Contact
-contact_note: Feel free to contact me via email or LinkedIn for professional connections.
+contact_note: I am happy to talk about research collaborations on LLM security, multimodal models, and robust AI. Email is the best way to reach me.
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -113,7 +127,7 @@ contact_note: Feel free to contact me via email or LinkedIn for professional con
 google_analytics: G-05KL8FY12J # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
 cronitor_analytics:  # cronitor RUM analytics site ID (format: XXXXXXXXX)
 
-google_site_verification:  # your google-site-verification ID (Google Search Console)
+google_site_verification: jTdkNKzt2G3I2XGhRxoZF483327YxflsTrdUx3q1FTA # Google Search Console (HTML tag method)
 bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 
 # -----------------------------------------------------------------------------
@@ -166,7 +180,7 @@ collections:
   news:
     defaults:
       layout: post
-    output: true
+    output: false # news items are shown inline on the home and /news/ pages
     permalink: /news/:path/
   projects:
     output: true
@@ -206,6 +220,13 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - reports
+  - README.md
+  - CONTRIBUTING.md
+  - LICENSE
+  - Dockerfile
+  - docker-compose.yml
+  - purgecss.config.js
 keep_files:
   - CNAME
   - .nojekyll
@@ -233,6 +254,10 @@ plugins:
 defaults:
   - scope:
       path: "assets"
+    values:
+      sitemap: false
+  - scope:
+      path: "googlef0d6bbd3c0b8ffdb.html" # Google Search Console verification file
     values:
       sitemap: false
 
@@ -359,7 +384,7 @@ jekyll-diagrams:
 
 enable_google_analytics:    true  # enables google analytics
 enable_cronitor_analytics: false  # enables cronitor RUM analytics
-enable_google_verification: false  # enables google site verification
+enable_google_verification: true   # enables google site verification
 enable_bing_verification:   false  # enables bing site verification
 enable_masonry:             true   # enables automatic project cards arrangement
 enable_math:                true   # enables math typesetting (uses MathJax)
@@ -400,9 +425,11 @@ medium_zoom:
 # Get external JSON data
 # -----------------------------------------------------------------------------
 
-jekyll_get_json:
-  - data: resume
-    json: assets/json/resume.json # it can also be an url
+# The CV page is generated from _data/cv.yml. To use a JSON Resume instead,
+# uncomment the block below and point it to your resume.json.
+# jekyll_get_json:
+#   - data: resume
+#     json: assets/json/resume.json # it can also be an url
 jsonresume:
   - basics
   - work

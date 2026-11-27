@@ -2,9 +2,9 @@
 layout: page
 permalink: /repositories/
 title: repositories
-description: My personal public GitHub repository. Unfortunately, due to the policy, most of my projects are private and cannot be shared and listed here.
+description: Code and data for my recent papers, plus personal projects. Some industry and lab projects are private and not listed here.
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 ## GitHub users
@@ -33,7 +33,7 @@ nav_order: 3
 {% endif %}
 {% endif %}
 
-## GitHub Repositories
+## Research code and projects
 
 {% if site.data.repositories.github_repos %}
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">

@@ -2,27 +2,32 @@
 layout: about
 title: about
 permalink: /
-subtitle: Postdoctoral Fellow at Robust Intelligent Systems Lab (RISys-Lab), Khalifa University
+subtitle: Postdoctoral Fellow, Robust Intelligent Systems Lab (RISys-Lab), Khalifa University
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
-  more_info: 
+  more_info: >
+    <p>Khalifa University, Abu Dhabi, UAE</p>
 news: true  # includes a list of news items
 latest_posts: false  # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-A highly motivated practitioner in the fields of AI, Computer Vision, Deep Learning, IoT, Robotics, Cybersecurity, and Intelligent Systems. Fast learner with excellent collaboration skills and a deep curiosity. Experienced as a first author and reviewer in CVPR & ICCV (as Outstanding Reviewer), and proficient in using Deep Learning Frameworks (i.e., TensorFlow and PyTorch). Recipient of numerous national and international awards, demonstrating excellence in related fields. Holds a track record of full-stack software and hardware development and providing technical solutions to complex problems.
+I am a Postdoctoral Fellow at the Robust Intelligent Systems Lab (RISys-Lab), Khalifa University, working with [Prof. Muzammal Naseer](https://muzammal-naseer.com/). My research is on trustworthy and robust AI, with a focus on large language models, multimodal models, and AI security.
 
-My current research focuses on Robust AI System on Computer Vision and Large Language Model.
+My recent work follows three directions:
 
-<!-- My current research focuses on Adversarial Machine Learning, where I propose a state-of-the-art framework for generating robust and universal Adversarial Camouflage capable of hiding vehicles from detectors in the physical world. -->
+- LLMs for cybersecurity: open, locally deployable security assistants and benchmarks for security tool use, including [RedSage](https://risys-lab.github.io/RedSage/) (ICLR 2026) and [KaliBench](https://risys-lab.github.io/KaliBench/) (NeurIPS 2026).
+- Multimodal and video LLMs: pixel-grounded video understanding with [SPARROW](https://risys-lab.github.io/SPARROW/) (CVPR 2026), reasoning supervision for vision encoders with [ReasonCLIP-58M](https://arxiv.org/abs/2606.26794) (ECCV 2026), and safety-critical evaluation with [SAFIRE](https://risys-lab.github.io/SAFIRE/) (EMNLP 2026 Findings).
+- Adversarial robustness in the physical world: 3D adversarial camouflage that hides vehicles from object detectors, in [DTA](https://islab-ai.github.io/dta-cvpr2022/) (CVPR 2022) and [ACTIVE](https://islab-ai.github.io/active-iccv2023/) (ICCV 2023).
 
-<!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I received my PhD in Computer Engineering from Pusan National University, South Korea, in 2024, where I worked in the Information Security and AIoT Lab and wrote my [dissertation](/dissertation/) on physical adversarial camouflage. I stayed on as a postdoctoral researcher there until moving to Abu Dhabi in 2025.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Earlier, I worked as a Java developer on manufacturing software at camLine, led the EEPIS humanoid robot soccer team at RoboCup, and co-founded MUFKO, a mobile app for Muslims in Korea with over 50K downloads.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
+I serve as an Area Chair for ECCV 2026 and was named an Outstanding Reviewer at CVPR 2026 (top 5% of about 17K reviewers) and ICCV 2023.
+
+For an overview of my work, see the [projects](/projects/) page or my [CV](/cv/) ([PDF](/assets/pdf/Naufal_Suryanto_CV.pdf)).

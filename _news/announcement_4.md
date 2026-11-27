@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Starting my #PostdoctoralFellowship at Pusan National University 🎓
+Started my postdoc in the Information Security and AIoT Lab at Pusan National University.

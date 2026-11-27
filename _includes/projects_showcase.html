@@ -1,0 +1,59 @@
+{%- comment -%}
+  Projects list. Content lives in _data/projects.yml and styles in _sass/_projects.scss.
+  Layout follows the publication rows used elsewhere on the site: figure on the left,
+  text on the right. Everything is visible at rest; the only motion is a slow pan across
+  wide result figures and a cross-fade between dataset examples, both off under
+  prefers-reduced-motion.
+{%- endcomment -%}
+{%- assign data = site.data.projects -%}
+<div class="pj">
+  <nav class="pj-toc" aria-label="Project themes">
+    {%- for c in data.categories %}
+    {%- assign n = data.items | where: "category", c.id | size -%}
+    {%- if n > 0 %}
+    <a href="#{{ c.id }}">{{ c.label }}</a>
+    {%- endif %}
+    {%- endfor %}
+  </nav>
+
+  {%- for c in data.categories %}
+  {%- assign items = data.items | where: "category", c.id -%}
+  {%- if items.size > 0 %}
+  <section class="pj-group" aria-labelledby="{{ c.id }}">
+    <h2 class="pj-group-title" id="{{ c.id }}">{{ c.label }}</h2>
+    {%- for p in items -%}
+    {%- assign mtype = p.media.type | default: "none" -%}
+    {%- assign primary = p.links | first -%}
+    <article class="pj-item{% if mtype == 'none' %} pj-item--text{% endif %}">
+      {%- if mtype != "none" %}
+      <a class="pj-thumb pj-thumb--{{ mtype }}{% if p.media.fit == 'contain' %} pj-thumb--contain{% endif %} z-depth-1" href="{{ primary.url }}" tabindex="-1" aria-hidden="true">
+        {%- if mtype == "slideshow" %}
+        {%- for im in p.media.images %}
+        <img src="{{ im.src | prepend: '/assets/img/projects/' | relative_url }}" alt="{{ im.alt }}" loading="lazy" decoding="async" style="animation-duration: {{ forloop.length | times: 3.5 }}s; animation-delay: {{ forloop.index0 | times: 3.5 }}s">
+        {%- endfor %}
+        {%- else %}
+        <img src="{{ p.media.src | prepend: '/assets/img/projects/' | relative_url }}" alt="{{ p.media.alt }}" loading="lazy" decoding="async">
+        {%- endif %}
+      </a>
+      {%- endif %}
+      <div class="pj-text">
+        <h3 class="pj-title">
+          {%- if primary %}<a href="{{ primary.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif -%}
+          {%- if p.subtitle %}<span class="pj-subtitle">{{ p.subtitle }}</span>{% endif -%}
+        </h3>
+        <p class="pj-meta"><span class="pj-venue">{{ p.venue }}</span>{% if p.role %} · {{ p.role }}{% endif %}</p>
+        <p class="pj-desc">{{ p.description | strip }}</p>
+        {%- if p.links.size > 0 %}
+        <div class="pj-links">
+          {%- for l in p.links %}
+          <a href="{{ l.url }}" class="btn btn-sm z-depth-0" role="button">{{ l.name }}</a>
+          {%- endfor %}
+        </div>
+        {%- endif %}
+      </div>
+    </article>
+    {%- endfor %}
+  </section>
+  {%- endif %}
+  {%- endfor %}
+</div>

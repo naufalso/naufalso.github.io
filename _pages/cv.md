@@ -1,11 +1,9 @@
-<!-- ---
+---
 layout: cv
 permalink: /cv/
 title: cv
 nav: true
-nav_order: 4
-cv_pdf: example_pdf.pdf
-description: This is a description of the page. You can modify it in 'pages/_cv.md'. You can also change or remove the top pdf download button.
-toc:
-  sidebar: left
---- -->
+nav_order: 3
+cv_pdf: Naufal_Suryanto_CV.pdf
+description: Download the full CV as PDF with the icon on the right. The complete publication list is on the publications page.
+---

@@ -1,0 +1,228 @@
+/*******************************************************************************
+ * Projects list (/projects/)
+ * Same visual language as the publication list: figure left, text right,
+ * theme colors from _themes.scss, outlined link buttons. No card boxes.
+ * Note: avoid var() inside calc(); the site CSS minifier breaks it.
+ ******************************************************************************/
+
+:root {
+  // Small secondary text needs more contrast than the theme grey (#828282 is 3.9:1 on white).
+  --pj-muted: #5f6368;
+}
+
+html[data-theme='dark'] {
+  --pj-muted: #{$grey-color-light};
+}
+
+.pj {
+  margin-top: .25rem;
+}
+
+/* Theme index: plain anchor links, so nothing on the page is ever hidden. */
+.pj-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.25rem;
+  margin-bottom: 2.25rem;
+  font-size: .9rem;
+
+  a {
+    color: var(--global-text-color);
+    border-bottom: 1px solid var(--global-divider-color);
+    padding: .2rem 0;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--global-theme-color);
+      border-bottom-color: var(--global-theme-color);
+      text-decoration: none;
+    }
+  }
+}
+
+.pj-group {
+  margin-bottom: 2.5rem;
+}
+
+.pj-group-title {
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--pj-muted);
+  padding-bottom: .5rem;
+  margin: 0 0 1.5rem;
+  border-bottom: 1px solid var(--global-divider-color);
+  scroll-margin-top: 5rem; // clears the fixed navbar when jumping from the index
+}
+
+/* Rows ---------------------------------------------------------------------- */
+.pj-item {
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  margin-bottom: 2rem;
+
+  @media (max-width: 576px) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: .9rem;
+  }
+}
+
+/* Rows without a figure keep the empty figure column so every title starts on the same edge. */
+.pj-item--text .pj-text {
+  grid-column: 2;
+
+  @media (max-width: 576px) {
+    grid-column: 1;
+  }
+}
+
+.pj-text {
+  min-width: 0;
+}
+
+.pj-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0;
+  text-wrap: balance;
+
+  a {
+    color: var(--global-text-color);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--global-theme-color);
+      text-decoration: none;
+    }
+  }
+}
+
+.pj-subtitle {
+  font-weight: 400;
+  color: var(--global-text-color);
+
+  &::before {
+    content: ": ";
+  }
+}
+
+.pj-meta {
+  font-size: .85rem;
+  color: var(--pj-muted);
+  margin: .2rem 0 .5rem;
+}
+
+.pj-venue {
+  color: var(--global-theme-color);
+  font-weight: 500;
+}
+
+.pj-desc {
+  font-size: .95rem;
+  line-height: 1.6;
+  max-width: 65ch;
+  margin: 0 0 .6rem;
+}
+
+/* Same outlined buttons as the publication list. */
+.pj-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+
+  a.btn {
+    color: var(--global-text-color);
+    border: 1px solid var(--global-text-color);
+    padding: .3rem .9rem;
+    margin: 0;
+    min-height: 1.75rem; // 28px touch target
+
+    &:hover,
+    &:focus-visible {
+      color: var(--global-theme-color);
+      border-color: var(--global-theme-color);
+    }
+  }
+}
+
+/* Figures ------------------------------------------------------------------- */
+.pj-thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: .25rem;
+  background: #fff; // figures are drawn on white in both themes
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.pj-thumb--contain img {
+  object-fit: contain;
+  padding: .4rem;
+}
+
+/* Wide result figures: rest on the left edge, pan to the right on hover or focus. */
+.pj-thumb--pan img {
+  object-position: 0% 50%;
+  transition: object-position 6s ease-in-out;
+}
+
+.pj-item:hover .pj-thumb--pan img,
+.pj-item:focus-within .pj-thumb--pan img {
+  object-position: 100% 50%;
+}
+
+/* Dataset examples: the first image is the resting frame; the others cross-fade in. */
+.pj-thumb--slideshow img {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation-name: pj-fade;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: backwards;
+}
+
+.pj-thumb--slideshow img:first-child {
+  position: relative;
+  opacity: 1;
+  animation-name: pj-fade-first;
+}
+
+@keyframes pj-fade {
+  0%   { opacity: 0; }
+  6%   { opacity: 1; }
+  25%  { opacity: 1; }
+  31%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes pj-fade-first {
+  0%   { opacity: 1; }
+  25%  { opacity: 1; }
+  31%  { opacity: 0; }
+  94%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pj-thumb img {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .pj-thumb--slideshow img:not(:first-child) {
+    display: none;
+  }
+}

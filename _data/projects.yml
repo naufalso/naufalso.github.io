@@ -1,0 +1,239 @@
+# Projects shown on /projects/.
+#
+# categories: ids used by the filter chips on the page.
+# items:
+#   media.type: image | pan (wide figure that pans on hover) | slideshow | none
+#   media.fit:  cover (default) | contain (for diagrams; keeps the whole figure visible)
+#   role:       your role on the paper (shown as a small tag)
+
+categories:
+  - id: llm-security
+    label: LLMs for Security
+  - id: multimodal
+    label: Multimodal Learning
+  - id: robustness
+    label: Adversarial Robustness
+  - id: engineering
+    label: Engineering
+
+items:
+  - title: RedSage
+    subtitle: A Cybersecurity Generalist LLM
+    category: llm-security
+    venue: ICLR 2026
+    role: First author
+    description: >
+      An open cybersecurity assistant that runs locally, so security teams do not have to send sensitive data to an external API.
+      Trained on 11.8B tokens of security-focused pretraining data and 266K agentic multi-turn samples, and evaluated on our RedSage-Bench.
+    media:
+      type: pan
+      src: redsage.jpg
+      alt: RedSage pipeline from data curation and agentic augmentation to pre-training, post-training and evaluation
+    links:
+      - name: Project
+        url: https://risys-lab.github.io/RedSage/
+      - name: Paper
+        url: https://openreview.net/forum?id=W4FAenIrQ2
+      - name: arXiv
+        url: https://arxiv.org/abs/2601.22159
+      - name: Code
+        url: https://github.com/RISys-Lab/RedSage
+      - name: Models
+        url: https://huggingface.co/collections/RISys-Lab/redsage-models
+
+  - title: KaliBench
+    subtitle: Cybersecurity Tool Use on Kali Linux
+    category: llm-security
+    venue: NeurIPS 2026
+    role: Co-first author
+    description: >
+      Can an LLM turn an analyst's request into a command that actually runs? KaliBench tests this with 8,504 verified query-command pairs
+      across 1,642 Kali Linux tools. Its deterministic checks also serve as verifiable rewards, letting an 8B model approach a 685B MoE model.
+    media:
+      type: image
+      fit: contain
+      src: kalibench.jpg
+      alt: KaliBench data generation, verification and evaluation pipeline
+    links:
+      - name: Project
+        url: https://risys-lab.github.io/KaliBench/
+      - name: arXiv
+        url: https://arxiv.org/abs/2610.02206
+      - name: Code
+        url: https://github.com/RISys-Lab/KaliBench
+      - name: Data & Models
+        url: https://huggingface.co/collections/RISys-Lab/kalibench-datasets-and-models
+
+  - title: SPARROW
+    subtitle: Pixel-Grounded Video MLLMs
+    category: multimodal
+    venue: CVPR 2026
+    role: Co-first author
+    description: >
+      A video MLLM that segments the objects you refer to and keeps tracking the same instance across frames.
+      Tracked target features and joint box and mask tokens reduce drift and identity switches, with gains of up to +8.9 J&F on referring video segmentation.
+    media:
+      type: pan
+      src: sparrow.jpg
+      alt: SPARROW qualitative results compared with UniPixel and GLUS on referring video segmentation
+    links:
+      - name: Project
+        url: https://risys-lab.github.io/SPARROW/
+      - name: Paper
+        url: https://openaccess.thecvf.com/content/CVPR2026/html/Alansari_SPARROW_Learning_Spatial_Precision_and_Temporal_Referential_Consistency_in_Pixel-Grounded_CVPR_2026_paper.html
+      - name: arXiv
+        url: https://arxiv.org/abs/2603.12382
+      - name: Code
+        url: https://github.com/RISys-Lab/SPARROW
+
+  - title: ReasonCLIP-58M
+    subtitle: Commonsense Reasoning Supervision for CLIP
+    category: multimodal
+    venue: ECCV 2026
+    role: Co-author
+    description: >
+      Continual pretraining that teaches CLIP-style encoders visually grounded commonsense reasoning, using 58M reasoning captions.
+      Used as a drop-in vision encoder in LLaVA-NeXT, it improves results without extra inference cost.
+    media:
+      type: pan
+      src: reasonclip.jpg
+      alt: ReasonCLIP training stages from descriptive baseline to explicit reasoning supervision
+    links:
+      - name: arXiv
+        url: https://arxiv.org/abs/2606.26794
+      - name: Code
+        url: https://github.com/RISys-Lab/ReasonCLIP
+
+  - title: SAFIRE
+    subtitle: Fire and Smoke Understanding in MLLMs
+    category: multimodal
+    venue: EMNLP 2026 Findings
+    role: Co-author
+    description: >
+      A safety-critical benchmark with 83K captioned images and 193K multiple-choice questions over 10 dimensions, from perception to reasoning.
+      Ten open MLLMs average only 61.9%, which shows how far they are from being reliable in emergency scenarios.
+    media:
+      type: slideshow
+      fit: cover
+      images:
+        - src: safire_campfire.jpg
+          alt: SAFIRE example, campfire scene
+        - src: safire_volcano.jpg
+          alt: SAFIRE example, volcano eruption
+        - src: safire_burning_car.jpg
+          alt: SAFIRE example, burning car
+        - src: safire_firework.jpg
+          alt: SAFIRE example, fireworks
+    links:
+      - name: Project
+        url: https://risys-lab.github.io/SAFIRE/
+      - name: arXiv
+        url: https://arxiv.org/abs/2609.07823
+      - name: Code
+        url: https://github.com/RISys-Lab/SAFIRE
+
+  - title: Cipher
+    subtitle: LLM Helper for Penetration Testing
+    category: llm-security
+    venue: Sensors 2024
+    role: Co-author
+    description: >
+      An LLM-based assistant for ethical penetration testing, developed at Pusan National University.
+    media:
+      type: none
+    links:
+      - name: Paper
+        url: https://www.mdpi.com/1424-8220/24/21/6878
+
+  - title: ACTIVE
+    subtitle: Transferable 3D Physical Camouflage
+    category: robustness
+    venue: ICCV 2023
+    role: First author
+    description: >
+      Adversarial camouflage that hides any 3D vehicle from object detectors. One texture transfers across 15 detectors,
+      other vehicle classes, segmentation models, and the real world.
+    media:
+      type: image
+      src: active.jpg
+      alt: Real-world evaluation of ACTIVE camouflage on scaled vehicles against an object detector
+    links:
+      - name: Project
+        url: https://islab-ai.github.io/active-iccv2023/
+      - name: Paper
+        url: https://openaccess.thecvf.com/content/ICCV2023/html/Suryanto_ACTIVE_Towards_Highly_Transferable_3D_Physical_Camouflage_for_Universal_and_ICCV_2023_paper.html
+      - name: Code
+        url: https://github.com/islab-ai/active-iccv2023
+
+  - title: DTA
+    subtitle: Differentiable Transformation Attack
+    category: robustness
+    venue: CVPR 2022
+    role: First author
+    description: >
+      A neural network that learns how a photo-realistic simulator (CARLA) transforms a texture, which makes white-box camouflage
+      optimization possible there. The resulting camouflage also fooled detectors on a scaled Tesla Model 3.
+    media:
+      type: image
+      src: dta.jpg
+      alt: DTA camouflage on a scaled Tesla Model 3 evading detection in real-world photos
+    links:
+      - name: Project
+        url: https://islab-ai.github.io/dta-cvpr2022/
+      - name: Paper
+        url: https://openaccess.thecvf.com/content/CVPR2022/html/Suryanto_DTA_Physical_Camouflage_Attacks_Using_Differentiable_Transformation_Network_CVPR_2022_paper.html
+      - name: Code
+        url: https://github.com/islab-ai/dta-cvpr2022
+
+  - title: Cityscape-Adverse
+    subtitle: Robustness Benchmark for Semantic Segmentation
+    category: robustness
+    venue: IEEE Access 2025
+    role: First author
+    description: >
+      Uses diffusion-based image editing to create realistic adverse-condition versions of Cityscapes scenes, and measures how segmentation models hold up.
+    media:
+      type: none
+    links:
+      - name: Paper
+        url: https://ieeexplore.ieee.org/abstract/document/10870179/
+      - name: Code
+        url: https://github.com/naufalso/cityscape-adverse
+
+  - title: Adversarial Manhole
+    subtitle: Patch Attack on Depth and Segmentation
+    category: robustness
+    venue: WISA 2024
+    role: First author
+    description: >
+      An adversarial patch disguised as a manhole cover that misleads monocular depth estimation and semantic segmentation in driving scenes.
+    media:
+      type: none
+    links:
+      - name: Paper
+        url: https://link.springer.com/chapter/10.1007/978-981-96-1624-4_23
+      - name: Code
+        url: https://github.com/naufalso/adversarial-manhole
+
+  - title: MUFKO
+    subtitle: Muslim Friendly Korea
+    category: engineering
+    venue: 2020 to now
+    role: Co-founder
+    description: >
+      The first cross-platform mobile app built for Muslims living in Korea. I co-founded it and built the app, which has over 50K downloads.
+    media:
+      type: none
+    links: []
+
+  - title: EROS
+    subtitle: EEPIS Humanoid Robot Soccer
+    category: engineering
+    venue: 2014 to 2017
+    role: Team lead
+    description: >
+      Led and programmed a kid-size humanoid soccer team that reached the RoboCup quarter-finals (2016) and placed 2nd runner-up in 2015.
+      Introduced ROS to the research center.
+    media:
+      type: none
+    links: []

@@ -13,7 +13,7 @@
             path=entry_path
             class="preview z-depth-1 rounded"
             zoomable=false
-            alt=entry.preview -%}
+            alt="Venue logo" -%}
           {%- endif -%}
         {%- elsif entry.abbr -%}
           {%- if site.data.venues[entry.abbr] -%}
@@ -121,6 +121,8 @@
         {%- else -%}
           {%- capture entrytype -%}{%- endcapture -%}
         {%- endif -%}
+        {%- assign entrymonth = "" -%}
+        {%- assign entryyear = "" -%}
         {%- if entry.month -%}
           {%- capture entrymonth -%}{{ " " }}{{ entry.month | capitalize }}{%- endcapture -%}
         {%- endif -%}

@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I have officially achieved my #PhD Degree! 🎉🎓
+Received my PhD in Computer Engineering from Pusan National University.
