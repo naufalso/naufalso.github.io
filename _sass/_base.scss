@@ -1115,3 +1115,12 @@ html[data-theme='dark'] .publications img.preview {
     gap: .5rem .875rem;
   }
 }
+
+// Links inside a page's short description (e.g. the CV download links).
+.post-description a {
+  color: var(--global-theme-color);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -35,17 +35,19 @@
   type: time_table
   contents:
     - title: Postdoctoral Fellow (LLMs, Multimodal and Foundation Models, AI Safety)
-      institution: Robust Intelligent Systems Lab, Khalifa University
+      institution: Robust Intelligent Systems Lab, Khalifa University (Supervisor - Prof. Muzammal Naseer)
       year: 2025 - now
       location: Abu Dhabi, UAE
       description:
-        - Research on LLMs for cybersecurity, pixel-grounded video MLLMs, and reasoning supervision for vision encoders (ICLR, CVPR, ECCV, NeurIPS, EMNLP 2026).
+        - 5 papers at top-tier AI venues in 2026 (ICLR, CVPR, NeurIPS, ECCV, EMNLP), including 1 first-author and 2 joint first-author papers, all with open code, data, and models.
+        - Cybersecurity LLMs with RedSage (open 8B model trained with continual pretraining, agentic SFT and DPO) and KaliBench (Kali Linux tool use with verifiable rewards for RL).
+        - Multimodal LLMs with SPARROW (pixel-grounded video MLLM), ReasonCLIP-58M (reasoning supervision for CLIP) and SAFIRE (fire and smoke safety benchmark).
     - title: Postdoctoral Researcher (AI Security)
       institution: Information Security and AIoT Lab, Pusan National University
       year: 2024 - 2025
       location: Busan, South Korea
       description:
-        - Practical adversarial machine learning and AI security applications.
+        - Practical adversarial machine learning and AI security, including an LLM assistant for penetration testing and a CAN bus intrusion detection system.
     - title: Graduate Researcher (AI, Computer Vision, Cybersecurity, IoT)
       institution: Information Security and AIoT Lab, Pusan National University
       year: 2018 - 2024
@@ -66,7 +68,7 @@
       year: 2020 - now
       location: Remote, South Korea
       description:
-        - Built the first cross-platform app for Muslims in Korea, with over 50K downloads.
+        - Built a cross-platform app for halal food and prayer spaces in Korea, with 100,000+ Google Play downloads.
     - title: Software Developer (Java)
       institution: camLine Pte Ltd
       year: 2017 - 2018
@@ -83,6 +85,8 @@
 - title: Academic Service
   type: time_table
   contents:
+    - title: Area Chair, CVPR 2027
+      year: 2027
     - title: Area Chair, ECCV 2026
       year: 2026
     - title: Outstanding Reviewer, CVPR 2026 (top 5% of about 17K reviewers)
