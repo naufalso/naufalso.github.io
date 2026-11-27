@@ -1058,3 +1058,10 @@ nav[data-toggle="toc"] {
     padding-top: 0.5rem;
   }
 }
+
+// Venue logos are drawn for light backgrounds (several have transparent
+// backgrounds with dark text), so give them a white backing in dark mode.
+html[data-theme='dark'] .publications img.preview {
+  background-color: #fff;
+  padding: 2px;
+}

@@ -1,258 +1,203 @@
 /*******************************************************************************
- * Projects showcase (/projects/)
- * Minimal cards with restrained motion. All motion is opt-in via JS and is
- * switched off for users who prefer reduced motion.
+ * Projects list (/projects/)
+ * Same visual language as the publication list: figure left, text right,
+ * theme colors from _themes.scss, outlined link buttons. No card boxes.
+ * Note: avoid var() inside calc(); the site CSS minifier breaks it.
  ******************************************************************************/
 
-.pj {
-  --pj-radius: 10px;
-  --pj-ease: cubic-bezier(.2, .7, .2, 1);
-  --pj-term-bg: #0f1115;
-  --pj-term-fg: #d6dbe3;
-  --pj-term-dim: #7d8590;
-  --pj-term-accent: #7ee2a8;
-  margin-top: .5rem;
+:root {
+  // Small secondary text needs more contrast than the theme grey (#828282 is 3.9:1 on white).
+  --pj-muted: #5f6368;
 }
 
-/* Filter chips -------------------------------------------------------------- */
-.pj-filters {
+html[data-theme='dark'] {
+  --pj-muted: #{$grey-color-light};
+}
+
+.pj {
+  margin-top: .25rem;
+}
+
+/* Theme index: plain anchor links, so nothing on the page is ever hidden. */
+.pj-toc {
   display: flex;
   flex-wrap: wrap;
-  gap: .5rem;
-  margin: 0 0 2rem;
-}
+  gap: .25rem 1.25rem;
+  margin-bottom: 2.25rem;
+  font-size: .9rem;
 
-.pj-chip {
-  font: inherit;
-  font-size: .85rem;
-  line-height: 1;
-  padding: .55rem .9rem;
-  border-radius: 999px;
-  border: 1px solid var(--global-divider-color);
-  background: transparent;
-  color: var(--global-text-color);
-  cursor: pointer;
-  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+  a {
+    color: var(--global-text-color);
+    border-bottom: 1px solid var(--global-divider-color);
+    padding: .2rem 0;
 
-  &:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
-  &:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 2px; }
-
-  &.is-active {
-    background: var(--global-theme-color);
-    border-color: var(--global-theme-color);
-    color: var(--global-hover-text-color);
+    &:hover,
+    &:focus-visible {
+      color: var(--global-theme-color);
+      border-bottom-color: var(--global-theme-color);
+      text-decoration: none;
+    }
   }
 }
 
-/* Groups -------------------------------------------------------------------- */
 .pj-group {
-  margin-bottom: 2.75rem;
-  &.is-hidden { display: none; }
+  margin-bottom: 2.5rem;
 }
 
 .pj-group-title {
   font-size: .8rem;
   font-weight: 500;
-  letter-spacing: .12em;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--global-text-color-light);
-  margin: 0 0 1rem;
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-
-  &::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: var(--global-divider-color);
-  }
+  color: var(--pj-muted);
+  padding-bottom: .5rem;
+  margin: 0 0 1.5rem;
+  border-bottom: 1px solid var(--global-divider-color);
+  scroll-margin-top: 5rem; // clears the fixed navbar when jumping from the index
 }
 
-.pj-grid {
+/* Rows ---------------------------------------------------------------------- */
+.pj-item {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  margin-bottom: 2rem;
 
-  @media (max-width: 640px) { grid-template-columns: 1fr; }
-}
-
-/* Cards --------------------------------------------------------------------- */
-.pj-card {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--global-divider-color);
-  border-radius: var(--pj-radius);
-  background: var(--global-card-bg-color);
-  overflow: hidden;
-  transition: transform .35s var(--pj-ease), box-shadow .35s var(--pj-ease), border-color .35s ease;
-
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px -12px rgba(0, 0, 0, .25);
-    border-color: transparent;
+  @media (max-width: 576px) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: .9rem;
   }
 }
 
-.pj-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 1rem 1.1rem 1.1rem;
+/* Rows without a figure keep the empty figure column so every title starts on the same edge. */
+.pj-item--text .pj-text {
+  grid-column: 2;
+
+  @media (max-width: 576px) {
+    grid-column: 1;
+  }
+}
+
+.pj-text {
+  min-width: 0;
+}
+
+.pj-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0;
+  text-wrap: balance;
+
+  a {
+    color: var(--global-text-color);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--global-theme-color);
+      text-decoration: none;
+    }
+  }
+}
+
+.pj-subtitle {
+  font-weight: 400;
+  color: var(--global-text-color);
+
+  &::before {
+    content: ": ";
+  }
 }
 
 .pj-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .4rem;
-  margin-bottom: .55rem;
-  font-size: .72rem;
-  letter-spacing: .02em;
-}
-
-.pj-venue,
-.pj-role {
-  padding: .2rem .5rem;
-  border-radius: 4px;
-  line-height: 1.3;
+  font-size: .85rem;
+  color: var(--pj-muted);
+  margin: .2rem 0 .5rem;
 }
 
 .pj-venue {
   color: var(--global-theme-color);
-  border: 1px solid var(--global-theme-color);
   font-weight: 500;
-}
-
-.pj-role {
-  color: var(--global-text-color-light);
-  border: 1px solid var(--global-divider-color);
-}
-
-.pj-title {
-  font-size: 1.15rem;
-  font-weight: 500;
-  margin: 0;
-
-  a { color: var(--global-text-color); }
-  a:hover { color: var(--global-theme-color); text-decoration: none; }
-}
-
-.pj-subtitle {
-  font-size: .85rem;
-  color: var(--global-text-color-light);
-  margin: .15rem 0 .6rem;
 }
 
 .pj-desc {
-  font-size: .9rem;
-  line-height: 1.55;
-  margin: 0 0 .9rem;
-  flex: 1;
+  font-size: .95rem;
+  line-height: 1.6;
+  max-width: 65ch;
+  margin: 0 0 .6rem;
 }
 
+/* Same outlined buttons as the publication list. */
 .pj-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: .35rem 1rem;
-  font-size: .8rem;
+  gap: .4rem;
 
-  a {
-    position: relative;
+  a.btn {
     color: var(--global-text-color);
-    font-weight: 500;
+    border: 1px solid var(--global-text-color);
+    padding: .3rem .9rem;
+    margin: 0;
+    min-height: 1.75rem; // 28px touch target
 
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -2px;
-      height: 1px;
-      background: currentColor;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform .3s var(--pj-ease);
+    &:hover,
+    &:focus-visible {
+      color: var(--global-theme-color);
+      border-color: var(--global-theme-color);
     }
-
-    &:hover { color: var(--global-theme-color); text-decoration: none; }
-    &:hover::after { transform: scaleX(1); }
   }
 }
 
-/* Compact cards (no media) sit in a tighter layout */
-.pj-card--compact .pj-body { padding-top: 1.1rem; }
-
-/* Media --------------------------------------------------------------------- */
-.pj-media {
+/* Figures ------------------------------------------------------------------- */
+.pj-thumb {
   position: relative;
   display: block;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
+  max-width: 100%;
   overflow: hidden;
-  background: #fff;
-  border-bottom: 1px solid var(--global-divider-color);
+  border-radius: .25rem;
+  background: #fff; // figures are drawn on white in both themes
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     display: block;
-    transition: transform 1.2s var(--pj-ease);
+    object-fit: cover;
   }
 }
 
-.pj-card:hover .pj-media--image img { transform: scale(1.04); }
-
-.pj-media--contain img {
+.pj-thumb--contain img {
   object-fit: contain;
-  padding: .5rem;
+  padding: .4rem;
 }
 
-.pj-card:hover .pj-media--contain img { transform: scale(1.02); }
-
-/* Wide result figures: pan across the figure on hover (or slowly on touch). */
-.pj-media--pan img {
+/* Wide result figures: rest on the left edge, pan to the right on hover or focus. */
+.pj-thumb--pan img {
   object-position: 0% 50%;
-  transition: object-position 7s ease-in-out;
+  transition: object-position 6s ease-in-out;
 }
 
-.pj-card:hover .pj-media--pan img { object-position: 100% 50%; }
-
-@media (hover: none) {
-  .pj-motion .pj-media--pan.is-visible img,
-  .pj-motion .pj-card.is-visible .pj-media--pan img {
-    animation: pj-pan 16s ease-in-out infinite alternate;
-  }
+.pj-item:hover .pj-thumb--pan img,
+.pj-item:focus-within .pj-thumb--pan img {
+  object-position: 100% 50%;
 }
 
-@keyframes pj-pan {
-  from { object-position: 0% 50%; }
-  to   { object-position: 100% 50%; }
-}
-
-/* Slideshow: CSS-only cross-fade */
-.pj-slides {
+/* Dataset examples: the first image is the resting frame; the others cross-fade in. */
+.pj-thumb--slideshow img {
   position: absolute;
   inset: 0;
-  display: block;
-
-  img {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-  }
-
-  img:first-child { opacity: 1; }
-}
-
-.pj-motion .pj-slides img {
   opacity: 0;
-  /* duration and delay are set inline per image (minifier-safe) */
   animation-name: pj-fade;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  animation-fill-mode: backwards;
+}
+
+.pj-thumb--slideshow img:first-child {
+  position: relative;
+  opacity: 1;
+  animation-name: pj-fade-first;
 }
 
 @keyframes pj-fade {
@@ -263,119 +208,21 @@
   100% { opacity: 0; }
 }
 
-/* Terminal (for projects without a figure) */
-.pj-media--terminal {
-  background: var(--pj-term-bg);
-  border-bottom-color: var(--pj-term-bg);
+@keyframes pj-fade-first {
+  0%   { opacity: 1; }
+  25%  { opacity: 1; }
+  31%  { opacity: 0; }
+  94%  { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-.pj-term {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  font-family: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
-  font-size: clamp(.66rem, 1.5vw, .8rem);
-  color: var(--pj-term-fg);
-}
-
-.pj-term-bar {
-  display: flex;
-  gap: 6px;
-  padding: .65rem .8rem;
-
-  i {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: #3a3f47;
-  }
-}
-
-.pj-term-body {
-  display: flex;
-  flex-direction: column;
-  gap: .35rem;
-  padding: .2rem 1rem 1rem;
-}
-
-.pj-term-line {
-  white-space: nowrap;
-  overflow: hidden;
-  color: var(--pj-term-fg);
-
-  b {
-    display: inline-block;
-    width: 13ch;
-    font-weight: 400;
-    color: var(--pj-term-dim);
-  }
-}
-
-.pj-term-line.pj-term-prompt { color: var(--pj-term-accent); margin-bottom: .2rem; }
-
-.pj-term-cursor {
-  display: inline-block;
-  width: .55em;
-  height: 1.05em;
-  background: var(--pj-term-fg);
-  opacity: .8;
-  animation: pj-blink 1.1s steps(1) infinite;
-}
-
-/* Typing: each line is revealed character by character once the card is visible. */
-.pj-motion .pj-term-line {
-  clip-path: inset(0 100% 0 0);
-}
-
-.pj-motion .pj-card.is-visible .pj-term-line {
-  /* duration, delay and steps() are set inline per line (minifier-safe) */
-  animation-name: pj-type;
-  animation-fill-mode: forwards;
-}
-
-@keyframes pj-type {
-  to { clip-path: inset(0 0 0 0); }
-}
-
-@keyframes pj-blink {
-  50% { opacity: 0; }
-}
-
-/* Reveal on scroll ---------------------------------------------------------- */
-.pj-motion .pj-reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .7s var(--pj-ease), transform .7s var(--pj-ease),
-    box-shadow .35s var(--pj-ease), border-color .35s ease;
-  transition-delay: var(--pj-delay, 0s), var(--pj-delay, 0s), 0s, 0s;
-
-  &.is-visible {
-    opacity: 1;
-    transform: none;
-  }
-
-  &.is-visible:hover { transform: translateY(-3px); }
-}
-
-/* Respect reduced-motion preferences: show everything, animate nothing. */
 @media (prefers-reduced-motion: reduce) {
-  .pj *,
-  .pj *::before,
-  .pj *::after {
+  .pj-thumb img {
     animation: none !important;
     transition: none !important;
   }
 
-  .pj .pj-reveal { opacity: 1 !important; transform: none !important; }
-  .pj .pj-term-line { clip-path: none !important; }
-  .pj .pj-slides img { opacity: 0 !important; }
-  .pj .pj-slides img:first-child { opacity: 1 !important; }
-}
-
-/* Dark mode tweaks */
-html[data-theme='dark'] {
-  .pj-card:hover { box-shadow: 0 10px 30px -12px rgba(0, 0, 0, .8); }
-  .pj-media { background: #f4f4f4; }
-  .pj-media--terminal { background: var(--pj-term-bg); }
+  .pj-thumb--slideshow img:not(:first-child) {
+    display: none;
+  }
 }

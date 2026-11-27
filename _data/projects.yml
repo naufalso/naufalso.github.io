@@ -2,7 +2,7 @@
 #
 # categories: ids used by the filter chips on the page.
 # items:
-#   media.type: image | pan (wide figure that pans slowly) | slideshow | terminal | none
+#   media.type: image | pan (wide figure that pans on hover) | slideshow | none
 #   media.fit:  cover (default) | contain (for diagrams; keeps the whole figure visible)
 #   role:       your role on the paper (shown as a small tag)
 
@@ -26,17 +26,9 @@ items:
       An open cybersecurity assistant that runs locally, so security teams do not have to send sensitive data to an external API.
       Trained on 11.8B tokens of security-focused pretraining data and 266K agentic multi-turn samples, and evaluated on our RedSage-Bench.
     media:
-      type: terminal
-      lines:
-        - prompt: "~/redsage $ cat SUMMARY"
-        - key: pretraining
-          value: 11.8B tokens, 28.6K documents
-        - key: fine-tuning
-          value: 266K multi-turn SFT samples
-        - key: benchmark
-          value: RedSage-Bench, 30K+ questions
-        - key: model
-          value: RedSage-Qwen3-8B, runs locally
+      type: pan
+      src: redsage.jpg
+      alt: RedSage pipeline from data curation and agentic augmentation to pre-training, post-training and evaluation
     links:
       - name: Project
         url: https://risys-lab.github.io/RedSage/
