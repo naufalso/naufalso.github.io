@@ -26,8 +26,8 @@ My recent work follows three directions:
 
 I received my PhD in Computer Engineering from Pusan National University, South Korea, in 2024, where I worked in the Information Security and AIoT Lab and wrote my [dissertation](/dissertation/) on physical adversarial camouflage. I stayed on as a postdoctoral researcher there until moving to Abu Dhabi in 2025.
 
-Earlier, I worked as a Java developer on manufacturing software at camLine, led the EEPIS humanoid robot soccer team at RoboCup, and co-founded MUFKO, a mobile app for Muslims in Korea with over 50K downloads.
+Earlier, I worked as a Java developer on manufacturing software at camLine, led the EEPIS humanoid robot soccer team at RoboCup, and co-founded MUFKO, a mobile app for halal food and prayer spaces in Korea with over 100,000 downloads.
 
-I serve as an Area Chair for ECCV 2026 and was named an Outstanding Reviewer at CVPR 2026 (top 5% of about 17K reviewers) and ICCV 2023.
+I serve as an Area Chair for CVPR 2027 and ECCV 2026, and was named an Outstanding Reviewer at CVPR 2026 (top 5% of about 17K reviewers) and ICCV 2023.
 
-For an overview of my work, see the [projects](/projects/) page or my [CV](/cv/) ([PDF](/assets/pdf/Naufal_Suryanto_CV.pdf)).
+For an overview of my work, see the [projects](/projects/) page or my [CV](/cv/) ([full PDF](/assets/pdf/Naufal_Suryanto_CV.pdf) or [one page](/assets/pdf/Naufal_Suryanto_CV_1page.pdf)).
