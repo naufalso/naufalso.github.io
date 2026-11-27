@@ -1,19 +1,20 @@
 ---
 ---
 
-@string{aps = {American Physical Society,}}
-
 @inproceedings{li2026kalibench,
   title={KaliBench: A Fine-Grained Benchmark for Cybersecurity Tool Use on Kali Linux with Runtime-Free Verifiable Rewards},
   author={Li, Pengfei and Suryanto, Naufal and Zhang, Sicheng and Naseer, Muzammal},
   booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
   year={2026},
-  html={https://risys-lab.github.io/KaliBench/},
+  arxiv={2610.02206},
+  pdf={https://arxiv.org/pdf/2610.02206},
   website={https://risys-lab.github.io/KaliBench/},
   code={https://github.com/RISys-Lab/KaliBench},
+  abstract={LLMs are increasingly applied to cybersecurity workflows, where they are expected to translate analysts' intent into tool invocations. However, existing evaluations focus on knowledge-based assessments or end-to-end agentic tasks, and do not directly measure LLMs' ability to generate executable commands for real-world cybersecurity tools. This gap is critical because cybersecurity operations rely on strict command-line interfaces (CLIs), where minor syntax errors, incorrect flag-value bindings, or argument misordering can invalidate execution. We introduce KaliBench, a fine-grained benchmark and dataset for natural-language-to-CLI translation on Kali Linux, comprising 8,504 query-command pairs spanning 1,642 tools across 23 capability dimensions and 5 security phases. KaliBench is constructed via a manuscript-grounded pipeline with deterministic canonicalization and alias-aware evaluation, enabling precise and reproducible assessment of tool selection and argument construction. To ensure both semantic correctness and practical executability, we develop a multi-stage verification pipeline that combines LLM-based validation, sandboxed terminal execution, and human-in-the-loop refinement. Building on these fine-grained, deterministic signals, KaliBench further enables runtime-free verifiable rewards for training. Across three evaluation modes and 24 configurations of general-purpose and security-focused open-weight models, no open-weight model exceeds 42\% exact-command accuracy in the unrestricted setting, highlighting the difficulty of accurate CLI-based cybersecurity tool use without explicit tool hints. We further show that supervised fine-tuning and reinforcement learning with verifiable rewards derived from KaliBench significantly improve an 8B model and achieve performance comparable to a 685B MoE model.},
   bibtex_show={true},
+  selected={true},
   preview={neurips_logo.svg},
-  note={*Equal contribution (Pengfei Li and Naufal Suryanto)}
+  note={* Equal contribution: Pengfei Li and Naufal Suryanto}
 }
 
 @inproceedings{li2026safire,
@@ -21,10 +22,11 @@
   author={Li, Pengfei and Suryanto, Naufal and Zhang, Sicheng and Alsharid, Mohammad and Naseer, Muzammal},
   booktitle={Findings of the Conference on Empirical Methods in Natural Language Processing (EMNLP)},
   year={2026},
-  html={https://arxiv.org/abs/2609.07823},
+  arxiv={2609.07823},
   pdf={https://arxiv.org/pdf/2609.07823},
   website={https://risys-lab.github.io/SAFIRE/},
   code={https://github.com/RISys-Lab/SAFIRE},
+  abstract={Multimodal Large Language Models (MLLMs) show strong progress on vision-language tasks, yet their reliability in safety-critical settings remains underexplored. Fire-smoke understanding is central to public safety and disaster response, but most existing benchmarks lack diverse real-world scenarios and context-aware evaluation. We introduce SAFIRE, a large-scale benchmark for fire-smoke understanding in MLLMs, comprising 83K captioned images from 20 scenarios and 193K multiple-choice VQA (MCVQA) generated from a 9.7K-image subset, spanning 10 evaluation dimensions from basic perception to higher-order reasoning. A GPT-5.4-assisted multi-stage verification pipeline with MLLM majority voting ensures annotation quality. Evaluating ten open-source MLLMs (8B-38B) yields an average accuracy of 61.9\%, exposing major gaps in safety-critical reasoning. We further show that adapting vision encoders with only 7\% of our domain-specific data boosts fire-scene classification accuracy from 20.1\% to 64.5\%, indicating that carefully curated data can yield substantial gains even when data volume is limited.},
   preview={emnlp_logo.png},
   bibtex_show={true}
 }
@@ -37,12 +39,15 @@
   year={2026},
   pages={17545-17556},
   html={https://openaccess.thecvf.com/content/CVPR2026/html/Alansari_SPARROW_Learning_Spatial_Precision_and_Temporal_Referential_Consistency_in_Pixel-Grounded_CVPR_2026_paper.html},
+  arxiv={2603.12382},
   pdf={https://arxiv.org/pdf/2603.12382},
   website={https://risys-lab.github.io/SPARROW/},
   code={https://github.com/RISys-Lab/SPARROW},
+  abstract={Multimodal large language models (MLLMs) have advanced from image-level reasoning to pixel-level grounding, but extending these capabilities to videos remains challenging as models must achieve spatial precision and temporally consistent reference tracking. Existing video MLLMs often rely on a static segmentation token ([SEG]) for frame-wise grounding, which provides semantics but lacks temporal context, causing spatial drift, identity switches, and unstable initialization when objects move or reappear. We introduce SPARROW, a pixel-grounded video MLLM that unifies spatial accuracy and temporal stability through two key components: (i) Target-Specific Tracked Features (TSF), which inject temporally aligned referent cues during training, and (ii) a dual-prompt design that decodes box ([BOX]) and segmentation ([SEG]) tokens to fuse geometric priors with semantic grounding. SPARROW is supported by a curated referential video dataset of 30,646 videos and 45,231 Q\&A pairs and operates end-to-end without external detectors via a class-agnostic SAM2-based proposer. Integrated into three recent open-source video MLLMs (UniPixel, GLUS, and VideoGLaMM), SPARROW delivers consistent gains across six benchmarks, improving up to +8.9 J\&F on RVOS, +5 mIoU on visual grounding, and +5.4 CLAIR on GCG. These results demonstrate that SPARROW substantially improves referential stability, spatial precision, and temporal coherence in pixel-grounded video understanding.},
   bibtex_show={true},
+  selected={true},
   preview={cvpr-2026-logo.svg},
-  note={*Equal contribution (Mohamad Alansari and Naufal Suryanto)}
+  note={* Equal contribution: Mohamad Alansari and Naufal Suryanto}
 }
 
 @inproceedings{zhang2026reasonclip,
@@ -50,26 +55,29 @@
   author={Zhang, Sicheng and Naseer, Muzammal and Xie, Binzhu and Suryanto, Naufal and Qiu, Shi and Bentahar, Jamal and Akhtar, Naveed and Shah, Mubarak},
   booktitle={European Conference on Computer Vision (ECCV)},
   year={2026},
-  html={https://arxiv.org/abs/2606.26794},
+  arxiv={2606.26794},
   pdf={https://arxiv.org/pdf/2606.26794},
   code={https://github.com/RISys-Lab/ReasonCLIP},
+  abstract={CLIP and its variants are widely adopted visual backbones in multimodal systems, but their pretraining remains dominated by descriptive image-text alignment. As downstream applications increasingly demand visually grounded commonsense inference and compositional reasoning, it remains unclear whether CLIP-style encoders can support such reasoning without architectural changes. To address this, we present ReasonCLIP-58M, a continual pretraining framework that integrates large-scale reasoning supervision into CLIP-style models through our two-stage strategy, which progressively integrates reasoning signals while preserving descriptive alignment, followed by category-structured reasoning supervision. To support this framework, we construct two complementary datasets and a benchmark: ReasonLite-42M, with open-form, visually verifiable reasoning captions; ReasonPro-16M, with category-specific reasoning supervision; and RCLIP-Bench for diagnostic evaluation of visually grounded reasoning. We train a family of ReasonCLIP that improves visually grounded commonsense and compositional reasoning while also enhancing zero-shot retrieval performance. As a drop-in visual encoder for multimodal large language models such as LLaVA-NeXT, ReasonCLIP delivers consistent gains without additional inference cost, demonstrating that structured reasoning supervision enhances the expressive capacity of CLIP-style visual representations.},
   preview={ECCV_2026_Logo.svg},
   bibtex_show={true}
 }
 
-@inproceedings{
-suryanto2026redsage,
-title={RedSage: A Cybersecurity Generalist {LLM}},
-author={Naufal Suryanto and Muzammal Naseer and Pengfei Li and Syed Talal Wasim and Jinhui Yi and Juergen Gall and Paolo Ceravolo and Ernesto Damiani},
-booktitle={The Fourteenth International Conference on Learning Representations},
-year={2026},
-url={https://openreview.net/forum?id=W4FAenIrQ2},
-html = {https://openreview.net/forum?id=W4FAenIrQ2},
-website = {https://risys-lab.github.io/RedSage/},
-pdf = {https://openreview.net/pdf?id=W4FAenIrQ2},
-bibtex_show = {true},
-selected={true},
-preview = {iclr_logo.svg}
+@inproceedings{suryanto2026redsage,
+  title={RedSage: A Cybersecurity Generalist {LLM}},
+  author={Suryanto, Naufal and Naseer, Muzammal and Li, Pengfei and Wasim, Syed Talal and Yi, Jinhui and Gall, Juergen and Ceravolo, Paolo and Damiani, Ernesto},
+  booktitle={International Conference on Learning Representations (ICLR)},
+  year={2026},
+  url={https://openreview.net/forum?id=W4FAenIrQ2},
+  html={https://openreview.net/forum?id=W4FAenIrQ2},
+  arxiv={2601.22159},
+  pdf={https://openreview.net/pdf?id=W4FAenIrQ2},
+  website={https://risys-lab.github.io/RedSage/},
+  code={https://github.com/RISys-Lab/RedSage},
+  abstract={Cybersecurity operations demand assistant LLMs that support diverse workflows without exposing sensitive data. Existing solutions either rely on proprietary APIs with privacy risks or on open models lacking domain adaptation. To bridge this gap, we curate 11.8B tokens of cybersecurity-focused continual pretraining data via large-scale web filtering and manual collection of high-quality resources, spanning 28.6K documents across frameworks, offensive techniques, and security tools. Building on this, we design an agentic augmentation pipeline that simulates expert workflows to generate 266K multi-turn cybersecurity samples for supervised fine-tuning. Combined with general open-source LLM data, these resources enable the training of RedSage, an open-source, locally deployable cybersecurity assistant with domain-aware pretraining and post-training. To rigorously evaluate the models, we introduce RedSage-Bench, a benchmark with 30K multiple-choice and 240 open-ended Q\&A items covering cybersecurity knowledge, skills, and tool expertise. RedSage is further evaluated on established cybersecurity benchmarks (e.g., CTI-Bench, CyberMetric, SECURE) and general LLM benchmarks to assess broader generalization. At the 8B scale, RedSage achieves consistently better results, surpassing the baseline models by up to +5.59 points on cybersecurity benchmarks and +5.05 points on Open LLM Leaderboard tasks. These findings demonstrate that domain-aware agentic augmentation and pre/post-training can not only enhance cybersecurity-specific expertise but also help to improve general reasoning and instruction-following. All models, datasets, and code are publicly available.},
+  bibtex_show={true},
+  selected={true},
+  preview={iclr_logo.svg}
 }
 
 @Article{Suryanto_2025_IEEACCESS,
@@ -83,7 +91,7 @@ preview = {iclr_logo.svg}
   keywords={Benchmark testing;Robustness;Semantic segmentation;Semantics;Meteorology;Synthetic data;Autonomous vehicles;Transformers;Computational modeling;Generative AI;Adverse conditions;benchmark;dataset;diffusion-based image editing;generative AI;model robustness;out-of-distribution;semantic segmentation;stable diffusion;synthetic data},
   doi={10.1109/ACCESS.2025.3537981},
   html = {https://ieeexplore.ieee.org/abstract/document/10870179/},
-  website = {https://github.com/naufalso/cityscape-adverse},
+  code = {https://github.com/naufalso/cityscape-adverse},
   pdf = {https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10870179},
   bibtex_show = {true},
   preview = {ieee_logo.png}
@@ -115,7 +123,7 @@ preview = {iclr_logo.svg}
   month = {August},
   location = {Jeju Island, South Korea},
   html = {https://link.springer.com/chapter/10.1007/978-981-96-1624-4_23},
-  pdf = {https://link.springer.com/chapter/10.1007/978-981-96-1624-4_23},
+  code = {https://github.com/naufalso/adversarial-manhole},
   bibtex_show = {true},
   preview = {springer-logo.png}
 }
@@ -152,7 +160,7 @@ preview = {iclr_logo.svg}
   series = {SOICT '23},
   html = {https://dl.acm.org/doi/abs/10.1145/3628797.3628994},
   pdf = {https://dl.acm.org/doi/pdf/10.1145/3628797.3628994},
-  preview = {acm_logo.webp},
+  preview = {acm_logo_dark.png},
   bibtex_show = {true}
 }
 
@@ -167,6 +175,8 @@ preview = {iclr_logo.svg}
   preview   = {ICCV2023_Logo.svg},
   html      = {https://openaccess.thecvf.com/content/ICCV2023/html/Suryanto_ACTIVE_Towards_Highly_Transferable_3D_Physical_Camouflage_for_Universal_and_ICCV_2023_paper.html},
   website   = {https://islab-ai.github.io/active-iccv2023/},
+  code      = {https://github.com/islab-ai/active-iccv2023},
+  abstract  = {Adversarial camouflage has garnered attention for its ability to attack object detectors from any viewpoint by covering the entire object's surface. However, universality and robustness in existing methods often fall short as the transferability aspect is often overlooked, thus restricting their application only to a specific target with limited performance. To address these challenges, we present Adversarial Camouflage for Transferable and Intensive Vehicle Evasion (ACTIVE), a state-of-the-art physical camouflage attack framework designed to generate universal and robust adversarial camouflage capable of concealing any 3D vehicle from detectors. Our framework incorporates innovative techniques to enhance universality and robustness, including a refined texture rendering that enables common texture application to different vehicles without being constrained to a specific texture map, a novel stealth loss that renders the vehicle undetectable, and a smooth and camouflage loss to enhance the naturalness of the adversarial camouflage. Our extensive experiments on 15 different models show that ACTIVE consistently outperforms existing works on various public detectors, including the latest YOLOv7. Notably, our universality evaluations reveal promising transferability to other vehicle classes, tasks (segmentation models), and the real world, not just other vehicles.},
   pdf       = {https://openaccess.thecvf.com/content/ICCV2023/papers/Suryanto_ACTIVE_Towards_Highly_Transferable_3D_Physical_Camouflage_for_Universal_and_ICCV_2023_paper.pdf},
   bibtex_show = {true}
 }
@@ -197,7 +207,7 @@ preview = {iclr_logo.svg}
   html = {https://www.cseric.or.kr/literature/ser_view.php?SnxIndxNum=223993},
   pdf = {https://manuscriptlink-society-file.s3-ap-northeast-1.amazonaws.com/kips/conference/ack2022/presentation/KIPS_C2022B0050.pdf},
   keywords = {localconv}
-},
+}
 
 @InProceedings{Suryanto_2022_CVPR,
   author    = {Suryanto, Naufal and Kim, Yongsu and Kang, Hyoeun and Larasati, Harashta Tatimma and Yun, Youngyeo and Le, Thi-Thu-Huong and Yang, Hunmin and Oh, Se-Yoon and Kim, Howon},
@@ -210,6 +220,8 @@ preview = {iclr_logo.svg}
   preview   = {CVPR2022_Logo.png},
   html      = {https://openaccess.thecvf.com/content/CVPR2022/html/Suryanto_DTA_Physical_Camouflage_Attacks_Using_Differentiable_Transformation_Network_CVPR_2022_paper.html},
   website   = {https://islab-ai.github.io/dta-cvpr2022/},
+  code      = {https://github.com/islab-ai/dta-cvpr2022},
+  abstract  = {To perform adversarial attacks in the physical world, many studies have proposed adversarial camouflage, a method to hide a target object by applying camouflage patterns on 3D object surfaces. For obtaining optimal physical adversarial camouflage, previous studies have utilized the so-called neural renderer, as it supports differentiability. However, existing neural renderers cannot fully represent various real-world transformations due to a lack of control of scene parameters compared to the legacy photo-realistic renderers. In this paper, we propose the Differentiable Transformation Attack (DTA), a framework for generating a robust physical adversarial pattern on a target object to camouflage it against object detection models with a wide range of transformations. It utilizes our novel Differentiable Transformation Network (DTN), which learns the expected transformation of a rendered object when the texture is changed while preserving the original properties of the target object. Using our attack framework, an adversary can gain both the advantages of the legacy photo-realistic renderers including various physical-world transformations and the benefit of white-box access by offering differentiability. Our experiments show that our camouflaged 3D vehicles can successfully evade state-of-the-art object detection models in the photo-realistic environment (i.e., CARLA on Unreal Engine). Furthermore, our demonstration on a scaled Tesla Model 3 proves the applicability and transferability of our method to the real world.},
   pdf       = {https://openaccess.thecvf.com/content/CVPR2022/papers/Suryanto_DTA_Physical_Camouflage_Attacks_Using_Differentiable_Transformation_Network_CVPR_2022_paper.pdf},
   bibtex_show = {true},
 }
@@ -314,7 +326,7 @@ preview = {iclr_logo.svg}
   month= "November",
   year = "2019",
   keywords = {localconv}
-},
+}
 
 @InProceedings{Suryanto_2017_IES,
   author={Suryanto, Naufal and Ikuta, Chihiro and Pramadihanto, Dadet},

@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I have completed the series of #PhD Defenses 🎓
+Completed my PhD defense at Pusan National University 🎓

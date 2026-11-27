@@ -2,6 +2,11 @@ github_users:
   - naufalso
 
 github_repos:
+  - RISys-Lab/RedSage
+  - RISys-Lab/KaliBench
+  - RISys-Lab/SPARROW
+  - RISys-Lab/SAFIRE
+  - RISys-Lab/ReasonCLIP
   - naufalso/keras_nerf
   - islab-ai/dta-cvpr2022
   - islab-ai/active-iccv2023

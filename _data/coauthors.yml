@@ -1,3 +1,8 @@
-"HowonKim":
-  - firstname: ["Howon", "H Kim", "H. K.", "Howon Kim"]
+# Co-author homepages. Keys are last names; firstname lists the spellings used in papers.bib.
+"Kim":
+  - firstname: ["Howon", "H.", "H"]
     url: https://www.researchgate.net/profile/Howon-Kim
+
+"Naseer":
+  - firstname: ["Muzammal", "M."]
+    url: https://muzammal-naseer.com/

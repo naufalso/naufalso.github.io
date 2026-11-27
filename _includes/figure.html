@@ -1,9 +1,13 @@
 {%- assign img_path = include.path | remove: ".jpg" | remove: ".jpeg" | remove: ".png" | remove: ".tiff" -%}
+{%- comment -%} Responsive WebP variants are only generated for raster inputs (see imagemagick.input_formats). {%- endcomment -%}
+{%- assign img_ext = include.path | split: "." | last | downcase -%}
+{%- assign has_responsive = false -%}
+{%- if img_ext == "jpg" or img_ext == "jpeg" or img_ext == "png" or img_ext == "tiff" -%}{%- assign has_responsive = true -%}{%- endif -%}
 
 <figure>
 
   <picture>
-    {% if site.imagemagick.enabled %}
+    {% if site.imagemagick.enabled and has_responsive %}
     {% for i in site.imagemagick.widths -%}
       <source
         class="responsive-img-srcset"

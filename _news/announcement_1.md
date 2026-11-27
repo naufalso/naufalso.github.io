@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I am deeply honored for being recognized as Outstanding Reviewer in #ICCV2023 :tada:
+Honored to be recognized as an Outstanding Reviewer at ICCV 2023 :tada:
