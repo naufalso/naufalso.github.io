@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started as a Postdoctoral Fellow at the Information Security and AIoT Lab, Pusan National University.
+Started my postdoc in the Information Security and AIoT Lab at Pusan National University.

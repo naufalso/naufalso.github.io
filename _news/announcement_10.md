@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-<a href="https://risys-lab.github.io/KaliBench/">KaliBench</a>, a benchmark for cybersecurity tool use on Kali Linux (co-first author), was accepted to NeurIPS 2026.
+Our Kali Linux tool-use benchmark <a href="https://risys-lab.github.io/KaliBench/">KaliBench</a> was accepted to NeurIPS 2026 (co-first author).

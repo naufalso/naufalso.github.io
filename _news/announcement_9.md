@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-<a href="https://risys-lab.github.io/SAFIRE/">SAFIRE</a>, a safety-critical benchmark for fire and smoke understanding in MLLMs, was accepted to EMNLP 2026 Findings.
+Our fire and smoke benchmark <a href="https://risys-lab.github.io/SAFIRE/">SAFIRE</a> was accepted to EMNLP 2026 Findings.
