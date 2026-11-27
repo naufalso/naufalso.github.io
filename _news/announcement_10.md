@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper “<a href="https://risys-lab.github.io/KaliBench/">KaliBench: A Fine-Grained Benchmark for Cybersecurity Tool Use on Kali Linux with Runtime-Free Verifiable Rewards</a>” has been accepted to NeurIPS 2026! 🎉
+<a href="https://risys-lab.github.io/KaliBench/">KaliBench</a>, a benchmark for cybersecurity tool use on Kali Linux (co-first author), was accepted to NeurIPS 2026.

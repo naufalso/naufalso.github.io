@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Officially received my PhD in Computer Engineering from Pusan National University! 🎉
+Received my PhD in Computer Engineering from Pusan National University.

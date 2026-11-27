@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper “<a href="https://risys-lab.github.io/SAFIRE/">SAFIRE: Safety-Critical Benchmark for Fine-grained Fire and Smoke Understanding in Multimodal LLMs</a>” has been accepted to EMNLP 2026 Findings! 🎉
+<a href="https://risys-lab.github.io/SAFIRE/">SAFIRE</a>, a safety-critical benchmark for fire and smoke understanding in MLLMs, was accepted to EMNLP 2026 Findings.

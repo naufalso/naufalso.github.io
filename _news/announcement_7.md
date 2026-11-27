@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper “<a href="https://risys-lab.github.io/SPARROW/">SPARROW: Learning Spatial Precision and Temporal Referential Consistency in Pixel-Grounded Video MLLMs</a>” has been accepted to CVPR 2026! 🎉 I was also recognized as a CVPR 2026 Outstanding Reviewer (top 5% of about 17K reviewers).
+<a href="https://risys-lab.github.io/SPARROW/">SPARROW</a>, a pixel-grounded video MLLM (co-first author), was accepted to CVPR 2026. I was also named a CVPR 2026 Outstanding Reviewer (top 5% of about 17K reviewers).

@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Completed my PhD defense at Pusan National University 🎓
+Completed my PhD defense at Pusan National University.

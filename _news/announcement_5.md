@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Moved to the UAE 🇦🇪 to join the Robust Intelligent Systems Lab (RISys-Lab) at Khalifa University as a Postdoctoral Fellow with Prof. Muzammal Naseer.
+Joined the Robust Intelligent Systems Lab (RISys-Lab) at Khalifa University, Abu Dhabi, as a Postdoctoral Fellow with Prof. Muzammal Naseer.

@@ -352,15 +352,25 @@ blockquote {
   text-align: center;
 
   .contact-icons {
-    font-size: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem 1.5rem;
+    font-size: 2.25rem;
+    margin-top: 2.5rem;
 
     a {
+      line-height: 1;
+
       i::before {
         color: var(--global-text-color);
         transition: color 0.2s ease-in-out;
       }
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
+        text-decoration: none;
+
         i::before {
           color: var(--global-theme-color);
         }
@@ -369,7 +379,9 @@ blockquote {
   }
 
   .contact-note {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    margin: 1rem auto 0;
+    max-width: 52ch;
   }
 }
 
@@ -1064,4 +1076,38 @@ nav[data-toggle="toc"] {
 html[data-theme='dark'] .publications img.preview {
   background-color: #fff;
   padding: 2px;
+}
+
+// News dates stay on one line and line up as a column.
+.news .news-date {
+  white-space: nowrap;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  padding-right: 1rem;
+}
+
+@media (max-width: 576px) {
+  // Stack each news date above its text so the text gets the full width.
+  .news table,
+  .news tbody,
+  .news tr,
+  .news th,
+  .news td {
+    display: block;
+  }
+
+  .news tr {
+    padding-bottom: .5rem;
+  }
+
+  .news .news-date {
+    padding-bottom: 0;
+    color: var(--global-text-color);
+  }
+
+  // Keep all profile icons on one row.
+  .social .contact-icons {
+    font-size: 1.9rem;
+    gap: .5rem .875rem;
+  }
 }

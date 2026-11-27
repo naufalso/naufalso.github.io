@@ -86,7 +86,7 @@ gitlab_username: # your GitLab user name
 twitter_username: naufal_suryanto  # your Twitter handle
 mastodon_username: # your mastodon instance+username in the format instance.tld/@username
 linkedin_username: naufal-suryanto # your LinkedIn user name
-telegram_username: NaufalSo # your Telegram user name
+telegram_username: # your Telegram user name (was NaufalSo)
 scholar_userid: vXEPNi4AAAAJ # your Google Scholar ID
 semanticscholar_id: 2008159459 # your Semantic Scholar ID
 whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
@@ -96,7 +96,7 @@ quora_username: # your Quora username
 publons_id: # your ID on Publons
 lattes_id: # your ID on Lattes (Brazilian Lattes CV)
 osf_id: # your OSF ID
-research_gate_profile: Naufal-Suryanto # your profile on ResearchGate
+research_gate_profile: # your profile on ResearchGate (was Naufal-Suryanto)
 scopus_id: # your profile on Scopus
 blogger_url: # your blogger URL
 work_url: # work page URL
@@ -104,13 +104,13 @@ keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
 wikipedia_id: # your wikipedia id (Case sensitive)
 dblp_url: https://dblp.org/orcid/0000-0002-0396-5938 # your DBLP profile url (resolved via ORCID)
-stackoverflow_id: 11658233 # your stackoverflow id
+stackoverflow_id: # your stackoverflow id (was 11658233)
 kaggle_id: # your kaggle id
 lastfm_id: # your lastfm id
 spotify_id: # your spotify id
 pinterest_id: # your pinterest id
 unsplash_id: # your unsplash id
-instagram_id: naufalsyo # your instagram id
+instagram_id: # your instagram id (was naufalsyo)
 facebook_id: # your facebook id
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 discord_id: # your discord id (18-digit unique numerical identifier)

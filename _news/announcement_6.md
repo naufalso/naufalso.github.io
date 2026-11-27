@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper “<a href="https://risys-lab.github.io/RedSage/">RedSage: A Cybersecurity Generalist LLM</a>” has been accepted to ICLR 2026! 🎉
+<a href="https://risys-lab.github.io/RedSage/">RedSage</a>, an open cybersecurity generalist LLM, was accepted to ICLR 2026.
