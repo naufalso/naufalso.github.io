@@ -20,11 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout 🛎️
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.2.2'
+        # Newer runner images only ship the latest patch of each Ruby series,
+        # so pin the series (verified locally with 3.3.6), not a patch version.
+        ruby-version: '3.3'
         bundler-cache: true
     - name: Update _config.yml ⚙️
       uses: fjogeleit/yaml-update-action@v0.13.1
@@ -33,10 +35,11 @@ jobs:
         valueFile: '_config.yml'
         propertyPath: 'giscus.repo'
         value: ${{ github.repository }}
+    - name: Install ImageMagick 🖼️
+      # jekyll-imagemagick needs it for the responsive WebP images
+      run: command -v convert || (sudo apt-get update && sudo apt-get install -y --no-install-recommends imagemagick)
     - name: Install and Build 🔧
       run: |
-        pip3 install --upgrade jupyter
-        npm install -g mermaid.cli
         npm install -g purgecss
         export JEKYLL_ENV=production
         bundle exec jekyll build --lsi
